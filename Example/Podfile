@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'FORScrollViewEmptyAssistant_Example' do
+  pod 'FORScrollViewEmptyAssistant', :path => '../'
+
+  target 'FORScrollViewEmptyAssistant_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  pod 'FBSnapshotTestCase'
+  end
+end
