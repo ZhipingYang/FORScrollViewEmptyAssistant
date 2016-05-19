@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "FORScrollViewEmptyAssistant"
-  s.version          = "0.1.0"
-  s.summary          = "的空白页"
+  s.version          = "0.1.1"
+  s.summary          = "Table/Collection的空白页"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  UI列表数据为空的空白页，可以自定义空白页的样式
+  UI列表数据为空的空白页，可以自定义空白页的样式,包括空白图，标题，副标题及按钮四个元素。
                        DESC
 
   s.homepage         = "https://github.com/ZhipingYang/FORScrollViewEmptyAssistant"
