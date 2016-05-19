@@ -7,8 +7,13 @@
 //
 
 #import "FORViewController.h"
+#import <MJRefresh/MJRefresh.h>
+#import <FORScrollViewEmptyAssistant/FORScrollViewEmptyAssistant.h>
 
-@interface FORViewController ()
+@interface FORViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -17,13 +22,82 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.dataArray = [NSMutableArray array];
+    self.tableview.tableFooterView = [UIView new];
+    
+    self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadDataSuccess];
+    }];
+    
+    [FORScrollViewEmptyAssistant emptyWithContentView:self.tableview configerBlock:^(FOREmptyAssistantConfiger *configer) {
+        configer.emptyTitle = @"This is title";
+        configer.emptyTitleFont = [UIFont boldSystemFontOfSize:22];
+        configer.emptySubtitle = @"Hello World !!!\nWrite the code, change the world";
+        configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+    }];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+    [self.tableview.mj_header beginRefreshing];
+}
+
+- (void)loadDataSuccess {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableview.mj_header endRefreshing];
+        for (int i=0; i<arc4random()%3+2; i++) {
+            [self.dataArray addObject:[[NSDate date] description]];
+        }
+        [self.tableview reloadData];
+    });
+}
+
+
+- (IBAction)deleteAll:(id)sender {
+    [self.dataArray removeAllObjects];
+    [self.tableview reloadData];
+}
+
+- (CGFloat)getRandomFloat{
+    return (arc4random()%100 + 156)/256.f;
+}
+
+#pragma mark - UITableView Datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:[self getRandomFloat]
+                                               green:[self getRandomFloat]
+                                                blue:[self getRandomFloat]
+                                               alpha:1];
+    return cell;
+}
+
+#pragma mark - UITableView Delegate methods
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.dataArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        if (self.dataArray.count==0) {
+            [self deleteAll:nil];
+        }
+    }
 }
 
 @end

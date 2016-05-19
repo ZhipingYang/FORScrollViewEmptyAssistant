@@ -8,11 +8,13 @@ PODS:
   - FORScrollViewEmptyAssistant (0.1.0):
     - DZNEmptyDataSet (~> 1.5.2)
   - Kiwi (2.4.0)
+  - MJRefresh (3.0.8)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
   - FORScrollViewEmptyAssistant (from `../`)
   - Kiwi
+  - MJRefresh (~> 3.0.7)
 
 EXTERNAL SOURCES:
   FORScrollViewEmptyAssistant:
@@ -23,7 +25,8 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
   FORScrollViewEmptyAssistant: d8c2c44b423044046d092bec301129ec0c7a2035
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
 
-PODFILE CHECKSUM: 9a4a03b2a195667b7a45b913246352dff58d8dba
+PODFILE CHECKSUM: 8868a6b965f94508a8b6766e1c23e2d95c57c2a6
 
 COCOAPODS: 1.0.0
