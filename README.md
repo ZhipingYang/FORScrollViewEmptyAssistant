@@ -1,6 +1,6 @@
 # FORScrollViewEmptyAssistant
 
-[![CI Status](http://img.shields.io/travis/XcodeYang/FORScrollViewEmptyAssistant.svg?style=flat)](https://travis-ci.org/ZhipingYang/FORScrollViewEmptyAssistant)
+[![CI Status](http://img.shields.io/travis/ZhipingYang/FORScrollViewEmptyAssistant.svg?style=flat)](https://travis-ci.org/ZhipingYang/FORScrollViewEmptyAssistant)
 [![Version](https://img.shields.io/cocoapods/v/FORScrollViewEmptyAssistant.svg?style=flat)](http://cocoapods.org/pods/FORScrollViewEmptyAssistant)
 [![License](https://img.shields.io/cocoapods/l/FORScrollViewEmptyAssistant.svg?style=flat)](http://cocoapods.org/pods/FORScrollViewEmptyAssistant)
 [![Platform](https://img.shields.io/cocoapods/p/FORScrollViewEmptyAssistant.svg?style=flat)](http://cocoapods.org/pods/FORScrollViewEmptyAssistant)
