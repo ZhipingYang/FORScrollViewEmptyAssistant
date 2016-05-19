@@ -23,6 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		756F058B27A779CD0F46EC20 /* Pods_FORScrollViewEmptyAssistant_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3604D49AA5C2F3D2CBCE4A4 /* Pods_FORScrollViewEmptyAssistant_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		F014EBB11CED53E800FED264 /* launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = F014EBB01CED53E800FED264 /* launch.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3604D49AA5C2F3D2CBCE4A4 /* Pods_FORScrollViewEmptyAssistant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FORScrollViewEmptyAssistant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7F0CE2FEDB72AEE001A8CC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F014EBB01CED53E800FED264 /* launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = launch.xib; sourceTree = "<group>"; };
 		F93C100435DA870E3A245D68 /* Pods-FORScrollViewEmptyAssistant_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FORScrollViewEmptyAssistant_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FORScrollViewEmptyAssistant_Tests/Pods-FORScrollViewEmptyAssistant_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* FORScrollViewEmptyAssistant-Prefix.pch */,
+				F014EBB01CED53E800FED264 /* launch.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				F014EBB11CED53E800FED264 /* launch.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FORScrollViewEmptyAssistant/FORScrollViewEmptyAssistant-Prefix.pch";
 				INFOPLIST_FILE = "FORScrollViewEmptyAssistant/FORScrollViewEmptyAssistant-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +537,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FORScrollViewEmptyAssistant/FORScrollViewEmptyAssistant-Prefix.pch";
 				INFOPLIST_FILE = "FORScrollViewEmptyAssistant/FORScrollViewEmptyAssistant-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

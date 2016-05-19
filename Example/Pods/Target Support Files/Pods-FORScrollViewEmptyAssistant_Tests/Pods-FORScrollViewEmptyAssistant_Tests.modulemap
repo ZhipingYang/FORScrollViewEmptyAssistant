@@ -1,0 +1,6 @@
+framework module Pods_FORScrollViewEmptyAssistant_Tests {
+  umbrella header "Pods-FORScrollViewEmptyAssistant_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

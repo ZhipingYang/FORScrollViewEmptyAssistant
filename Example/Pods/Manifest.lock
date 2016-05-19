@@ -1,0 +1,29 @@
+PODS:
+  - DZNEmptyDataSet (1.5.2)
+  - FBSnapshotTestCase (2.1.0):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.0)
+  - FBSnapshotTestCase/Core (2.1.0)
+  - FBSnapshotTestCase/SwiftSupport (2.1.0):
+    - FBSnapshotTestCase/Core
+  - FORScrollViewEmptyAssistant (0.1.0):
+    - DZNEmptyDataSet (~> 1.5.2)
+  - Kiwi (2.4.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - FORScrollViewEmptyAssistant (from `../`)
+  - Kiwi
+
+EXTERNAL SOURCES:
+  FORScrollViewEmptyAssistant:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 741da409081a4bf707c949c964623a6ad1799772
+  FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
+  FORScrollViewEmptyAssistant: d8c2c44b423044046d092bec301129ec0c7a2035
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+
+PODFILE CHECKSUM: 9a4a03b2a195667b7a45b913246352dff58d8dba
+
+COCOAPODS: 1.0.0
