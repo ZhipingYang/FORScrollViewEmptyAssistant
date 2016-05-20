@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.0)
   - FBSnapshotTestCase/SwiftSupport (2.1.0):
     - FBSnapshotTestCase/Core
-  - FORScrollViewEmptyAssistant (0.1.0):
+  - FORScrollViewEmptyAssistant (0.1.1):
     - DZNEmptyDataSet (~> 1.5.2)
   - Kiwi (2.4.0)
   - MJRefresh (3.0.8)
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 741da409081a4bf707c949c964623a6ad1799772
   FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
-  FORScrollViewEmptyAssistant: d8c2c44b423044046d092bec301129ec0c7a2035
+  FORScrollViewEmptyAssistant: 8d971019d511feba622a0dc759977b3640364eb9
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
 

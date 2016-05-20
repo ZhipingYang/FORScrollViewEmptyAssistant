@@ -9,9 +9,26 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-带按钮反馈的Block配置方式
+```objc
+// common initialization
+
+[FORScrollViewEmptyAssistant emptyWithContentView:self.tableview configerBlock:^(FOREmptyAssistantConfiger *configer) {
+        configer.emptyTitle = @"Hello World";
+        configer.emptySubtitle = @"Talk is cheap. Show me the code";
+        configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+        configer.shouldDisplay = ^{
+            // return bool value 
+        };
+}];
+
+FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+configer.emptyTitle = @"Hello World";
+[FORScrollViewEmptyAssistant emptyWithContentView:scrollView emptyConfiger:configer];
+```
 
 ```objc
+// with button named request
 [FORScrollViewEmptyAssistant emptyWithContentView:scrollView
                                     configerBlock:^(FOREmptyAssistantConfiger *configer) {
                                         configer.emptyImage = [UIImage imageNamed:@""];
@@ -22,15 +39,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
                               emptyBtnActionBlock:^{
                                       //action code
                                   }];
-```
-
-不带按钮的传值方式
-
-```objc
-FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
-configer.emptyImage = [UIImage imageNamed:@""];
-configer.emptyTitle = @"Net error,Please request again";
-[FORScrollViewEmptyAssistant emptyWithContentView:scrollView emptyConfiger:configer];
 ```
 
 ## Requirements
