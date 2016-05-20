@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef BOOL(^ShouldDisplay)();
+
 @interface FOREmptyAssistantConfiger : NSObject
 
 @property (nonatomic, strong)   UIImage *emptyImage;
@@ -49,7 +51,7 @@
 
 // default YES
 //添加空白页后ScrollView是否可以展示
-@property (nonatomic)   BOOL shouldDisplay;
+@property (nonatomic)   ShouldDisplay shouldDisplay;
 
 @end
 

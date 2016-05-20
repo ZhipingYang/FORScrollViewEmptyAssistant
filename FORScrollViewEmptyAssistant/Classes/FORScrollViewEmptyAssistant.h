@@ -11,10 +11,6 @@
 
 @interface FORScrollViewEmptyAssistant : NSObject
 
-@property (nonatomic, strong)   FOREmptyAssistantConfiger *emptyConfiger;
-@property (nonatomic, copy)     NSString *emptyBtnTitle;
-@property (nonatomic, copy)     void(^emptyBtnActionBlock)();
-
 #pragma mark - ModelConfig
 
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView

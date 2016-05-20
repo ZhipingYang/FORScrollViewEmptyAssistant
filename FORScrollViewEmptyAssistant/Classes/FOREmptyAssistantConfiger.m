@@ -17,7 +17,6 @@
         self.emptyCenterOffset = CGPointMake(0, -30);
         self.emptySpaceHeight = 20;
         self.allowScroll = YES;
-        self.shouldDisplay = YES;
     }
     return self;
 }

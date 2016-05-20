@@ -25,6 +25,10 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
 
 @interface FORScrollViewEmptyAssistant ()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
+@property (nonatomic, strong)   FOREmptyAssistantConfiger *emptyConfiger;
+@property (nonatomic, copy)     NSString *emptyBtnTitle;
+@property (nonatomic, copy)     void(^emptyBtnActionBlock)();
+
 @end
 
 @implementation FORScrollViewEmptyAssistant
@@ -36,7 +40,7 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
                               emptyConfiger:(FOREmptyAssistantConfiger *)configer;
 {
     FORScrollViewEmptyAssistant *emptyView = [[FORScrollViewEmptyAssistant alloc] initWithContentView:contentView
-                                                                         configer:configer];
+                                                                                             configer:configer];
     return emptyView;
 }
 
@@ -46,7 +50,7 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
                         emptyBtnActionBlock:(void(^)())btnActionBlock;
 {
     FORScrollViewEmptyAssistant *emptyView = [[FORScrollViewEmptyAssistant alloc] initWithContentView:contentView
-                                                                         configer:configer];
+                                                                                             configer:configer];
     emptyView.emptyBtnTitle = btnTitle;
     emptyView.emptyBtnActionBlock = btnActionBlock;
     return emptyView;
@@ -58,7 +62,7 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
     !configerBlock ?: configerBlock(configer);
     FORScrollViewEmptyAssistant *emptyView = [[FORScrollViewEmptyAssistant alloc] initWithContentView:contentView
-                                                                         configer:configer];
+                                                                                             configer:configer];
     return emptyView;
 }
 
@@ -160,7 +164,7 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
 
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
 {
-    return self.emptyConfiger.shouldDisplay;
+    return self.emptyConfiger.shouldDisplay ? self.emptyConfiger.shouldDisplay() : YES;
 }
 
 - (CGPoint)offsetForEmptyDataSet:(UIScrollView *)scrollView
