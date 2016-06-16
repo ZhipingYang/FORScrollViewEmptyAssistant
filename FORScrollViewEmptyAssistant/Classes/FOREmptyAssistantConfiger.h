@@ -7,50 +7,65 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ *  是否显示空白页的Block
+ *  @return 返回Bool是否应当显示空白页
+ */
 typedef BOOL(^ShouldDisplay)();
 
+/**
+ *  空白页的常用参数配置类，参数可以根据配置是否显示
+ */
 @interface FOREmptyAssistantConfiger : NSObject
 
+///空白页的占位图icon，有则显示，无则消失
 @property (nonatomic, strong)   UIImage *emptyImage;
 
-// default @""
+/// default @""
 @property (nonatomic, copy)     NSString *emptyTitle;
-// default systemFontOfSize:17.0f
+/// default systemFontOfSize:17.0f
 @property (nonatomic, strong)   UIFont *emptyTitleFont;
-// default darkGrayColor
+/// default darkGrayColor
 @property (nonatomic, strong)   UIColor *emptyTitleColor;
 
-
-// default @""
+/// default @""
 @property (nonatomic, copy)     NSString *emptySubtitle;
-// default systemFontOfSize:15.0f
+/// default systemFontOfSize:15.0f
 @property (nonatomic, strong)   UIFont *emptySubtitleFont;
-// default lightGrayColor
+/// default lightGrayColor
 @property (nonatomic, strong)   UIColor *emptySubtitleColor;
 
-// default systemFontOfSize:17.0f
+/// default systemFontOfSize:17.0f
 @property (nonatomic, strong)   UIFont *emptyBtntitleFont;
-// default whiteColor
+/// default whiteColor
 @property (nonatomic, strong)   UIColor *emptyBtntitleColor;
-// default "blank_button"
+/// default "blank_button"
 @property (nonatomic, strong)   UIImage *emptyBtnImage;
 
 
-// default CGPointZero
-//空白页整体位置默认是在tableView居中显示
+/**
+ *  空白页整体位置默认是在tableView居中显示
+ *  default CGPointZero
+ */
 @property (nonatomic)   CGPoint emptyCenterOffset;
 
-// default (x:0, y:-30)
-//空白页的图片、按钮、文案之间的间距大小
+
+/**
+ *  空白页的图片、按钮、文案之间的间距大小
+ *  default (x:0, y:-30)
+ */
 @property (nonatomic)   CGFloat emptySpaceHeight;
 
-// default YES
-//添加空白页后ScrollView是否可以继续拖拽
+/**
+ *  添加空白页后ScrollView是否可以继续拖拽
+ *  default YES
+ */
 @property (nonatomic)   BOOL allowScroll;
 
-// default YES
-//添加空白页后ScrollView是否可以展示
+/**
+ *  添加空白页后ScrollView是否可以展示
+ *  default YES
+ */
 @property (nonatomic)   ShouldDisplay shouldDisplay;
 
 @end
