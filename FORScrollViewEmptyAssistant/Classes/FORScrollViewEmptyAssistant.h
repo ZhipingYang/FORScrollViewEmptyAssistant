@@ -12,7 +12,7 @@
 /**
  *  DZNEmptyData辅助，重新封装接口调用更简洁
  *  @bug 缺陷：目前还没有引入原库的customView来配置空白页
- *  
+ *
  *  #简单配置#
  *  @see   emptyWithContentView:emptyConfiger:
  *  @see   emptyWithContentView:emptyConfiger:emptyBtnTitle:emptyBtnActionBlock:
@@ -33,7 +33,7 @@
  *  @return self
  */
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              emptyConfiger:(FOREmptyAssistantConfiger *)configer;
+                                        emptyConfiger:(FOREmptyAssistantConfiger *)configer;
 /**
  *  有反馈按钮的空白页,用new一个配置类来配置空白页
  *
@@ -45,9 +45,9 @@
  *  @return self
  */
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              emptyConfiger:(FOREmptyAssistantConfiger *)configer
-                              emptyBtnTitle:(NSString *)btnTitle
-                        emptyBtnActionBlock:(void(^)())btnActionBlock;
+                                        emptyConfiger:(FOREmptyAssistantConfiger *)configer
+                                        emptyBtnTitle:(NSString *)btnTitle
+                                  emptyBtnActionBlock:(void(^)())btnActionBlock;
 
 #pragma mark - BlockConfig
 /**
@@ -59,7 +59,7 @@
  *  @return self
  */
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock;
+                                        configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock;
 
 /**
  *  有反馈按钮的空白页,用闭包函数来配置空白页
@@ -72,9 +72,9 @@
  *  @return self
  */
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock
-                              emptyBtnTitle:(NSString *)btnTitle
-                        emptyBtnActionBlock:(void(^)())btnActionBlock;
+                                        configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock
+                                        emptyBtnTitle:(NSString *)btnTitle
+                                  emptyBtnActionBlock:(void(^)())btnActionBlock;
 @end
 
 /**

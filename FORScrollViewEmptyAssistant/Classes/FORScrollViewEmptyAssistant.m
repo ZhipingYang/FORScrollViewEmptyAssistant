@@ -37,7 +37,7 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
 }
 
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              emptyConfiger:(FOREmptyAssistantConfiger *)configer;
+                                        emptyConfiger:(FOREmptyAssistantConfiger *)configer;
 {
     FORScrollViewEmptyAssistant *emptyView = [[FORScrollViewEmptyAssistant alloc] initWithContentView:contentView
                                                                                              configer:configer];
@@ -45,9 +45,9 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
 }
 
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              emptyConfiger:(FOREmptyAssistantConfiger *)configer
-                              emptyBtnTitle:(NSString *)btnTitle
-                        emptyBtnActionBlock:(void(^)())btnActionBlock;
+                                        emptyConfiger:(FOREmptyAssistantConfiger *)configer
+                                        emptyBtnTitle:(NSString *)btnTitle
+                                  emptyBtnActionBlock:(void(^)())btnActionBlock;
 {
     FORScrollViewEmptyAssistant *emptyView = [[FORScrollViewEmptyAssistant alloc] initWithContentView:contentView
                                                                                              configer:configer];
@@ -57,7 +57,7 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
 }
 
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock
+                                        configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock
 {
     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
     !configerBlock ?: configerBlock(configer);
@@ -67,18 +67,18 @@ static char const * const kEmptyAssistant = "kEmptyAssistant";
 }
 
 + (FORScrollViewEmptyAssistant *)emptyWithContentView:(UIScrollView *)contentView
-                              configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock
-                              emptyBtnTitle:(NSString *)btnTitle
-                        emptyBtnActionBlock:(void(^)())btnActionBlock
+                                        configerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock
+                                        emptyBtnTitle:(NSString *)btnTitle
+                                  emptyBtnActionBlock:(void(^)())btnActionBlock
 {
     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
     !configerBlock ?: configerBlock(configer);
     FORScrollViewEmptyAssistant *emptyView = [[FORScrollViewEmptyAssistant alloc] initWithContentView:contentView
-                                                                         configer:configer];
+                                                                                             configer:configer];
     emptyView.emptyBtnTitle = btnTitle;
     emptyView.emptyBtnActionBlock = btnActionBlock;
     return emptyView;
-
+    
 }
 
 
