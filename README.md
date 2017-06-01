@@ -30,11 +30,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 **custom view as emptyView**
 
 ```objective-c
-
     typeof(self) weakSelf = self;
     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
     configer.emptyTitle = @"This is demo";
-    configer.emptySubtitle = @"tap this to request network";
+    configer.emptySubtitle = @"tap this to request network \n hurry up";
     configer.emptyViewTapBlock = ^{
         [weakSelf.tableview.mj_header beginRefreshing];
     };
@@ -42,20 +41,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```
 **custom view as emptyView**
 
+<img width="200" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672453/cfdd51ea-46eb-11e7-8746-1bacf58dfe8d.png"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672501/0263db48-46ec-11e7-9000-2400e71e1a3f.jpeg">
+
 ```objective-c
-
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.backgroundColor = [UIColor redColor];
-    [btn setTitle:@"hello world" forState:UIControlStateNormal];
-    btn.frame = CGRectMake(0, 0, 100, 100);
-    [btn addTarget:self action:@selector(viewDidAppear:) forControlEvents:UIControlEventTouchUpInside];
-    FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
-    configer.customView = btn;
-    configer.shouldDisplay = ^BOOL{
-        return weakSelf.emptyDisplayCondition;
-    };
-    [self.tableview emptyViewConfiger:configer];
-
+     UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"FORCustomCell" owner:nil options:nil] firstObject];
+     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+     configer.customView = view;
+     configer.shouldDisplay = ^BOOL{
+     return weakSelf.emptyDisplayCondition;
+     };
+     [self.tableview emptyViewConfiger:configer];
 ```
 
 ## Requirements
