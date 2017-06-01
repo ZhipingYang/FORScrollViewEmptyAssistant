@@ -75,8 +75,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 真实项目中的空白页占位图图样案例：
 
 DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实现的一些图样：
-![demo_show](https://cloud.githubusercontent.com/assets/9360037/26672974/cba10d2c-46ed-11e7-9b56-e04b6ca65b37.jpg)
-
+<img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672500/0260edac-46ec-11e7-9026-d22a5dcdd1fd.jpeg"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672502/0268a2cc-46ec-11e7-9594-4d81a1626748.jpeg"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672503/02751372-46ec-11e7-9916-4ed6d69052dc.jpeg">
 
 ### 特征
 - 大于等于 iOS6.0
