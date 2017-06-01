@@ -3,6 +3,7 @@ use_frameworks!
 target 'FORScrollViewEmptyAssistant_Example' do
   pod 'FORScrollViewEmptyAssistant', :path => '../'
   pod 'MJRefresh', '~> 3.0.7'
+  pod 'FORGestureTrackDisplay'
   
   target 'FORScrollViewEmptyAssistant_Tests' do
     inherit! :search_paths

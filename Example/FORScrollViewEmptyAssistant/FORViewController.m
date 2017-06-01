@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *dataArray;
 
 @property (nonatomic) BOOL emptyDisplayCondition;
+
 @end
 
 @implementation FORViewController
@@ -32,16 +33,53 @@
         [self loadDataSuccess];
     }];
     
-    [FORScrollViewEmptyAssistant emptyWithContentView:self.tableview configerBlock:^(FOREmptyAssistantConfiger *configer) {
+    // method one 配置方法1
+    typeof(self) weakSelf = self;
+    [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
         configer.emptyTitle = @"Hello World";
         configer.emptyTitleFont = [UIFont boldSystemFontOfSize:22];
         configer.emptySubtitle = @"Talk is cheap. Show me the code";
         configer.emptyImage = [UIImage imageNamed:@"image_empty"];
         configer.emptySpaceHeight = 20;
+        configer.emptyBtnTitle = @"Request Net";
+        configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
+        configer.emptyBtnClickBlock = ^{
+            [weakSelf.tableview.mj_header beginRefreshing];
+        };
         configer.shouldDisplay = ^{
-            return self.emptyDisplayCondition;
+            return weakSelf.emptyDisplayCondition;
+        };
+        configer.emptyViewTapBlock = ^{
+            [[[UIAlertView alloc] initWithTitle:@"EmptyView Tapped" message:@"add some event when empty view tapped" delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil] show];
         };
     }];
+    
+    /*
+     
+    // method two 配置方法2
+    typeof(self) weakSelf = self;
+    FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+    configer.emptyTitle = @"This is demo";
+    configer.emptySubtitle = @"tap this to request network";
+    configer.emptyViewTapBlock = ^{
+        [weakSelf.tableview.mj_header beginRefreshing];
+    };
+    [self.tableview emptyViewConfiger:configer];
+    
+     
+    // method three 配置方法3
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"hello world" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 0, 100, 100);
+    [btn addTarget:self action:@selector(viewDidAppear:) forControlEvents:UIControlEventTouchUpInside];
+    FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+    configer.customView = btn;
+    configer.shouldDisplay = ^BOOL{
+        return weakSelf.emptyDisplayCondition;
+    };
+    [self.tableview emptyViewConfiger:configer];
+     */
 }
 
 - (void)viewDidAppear:(BOOL)animated {

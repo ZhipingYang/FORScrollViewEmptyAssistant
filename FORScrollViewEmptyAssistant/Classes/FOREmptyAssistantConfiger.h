@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-typedef BOOL(^ShouldDisplay)();
+@interface FOREmptyAssistantConfiger : NSObject <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
-@interface FOREmptyAssistantConfiger : NSObject
-
+// default nil
 @property (nonatomic, strong)   UIImage *emptyImage;
 
 // default @""
@@ -29,13 +29,19 @@ typedef BOOL(^ShouldDisplay)();
 // default lightGrayColor
 @property (nonatomic, strong)   UIColor *emptySubtitleColor;
 
+
+// default @""
+@property (nonatomic, copy)   NSString *emptyBtnTitle;
 // default systemFontOfSize:17.0f
 @property (nonatomic, strong)   UIFont *emptyBtntitleFont;
 // default whiteColor
 @property (nonatomic, strong)   UIColor *emptyBtntitleColor;
+
 // default "blank_button"
 @property (nonatomic, strong)   UIImage *emptyBtnImage;
 
+
+@property (nonatomic, strong)   UIView *customView;
 
 // default CGPointZero
 //空白页整体位置默认是在tableView居中显示
@@ -50,8 +56,21 @@ typedef BOOL(^ShouldDisplay)();
 @property (nonatomic)   BOOL allowScroll;
 
 // default YES
+@property (nonatomic)   BOOL userInteractionEnabled;
+
+// default YES
 //添加空白页后ScrollView是否可以展示
-@property (nonatomic)   ShouldDisplay shouldDisplay;
+@property (nonatomic, copy) BOOL(^shouldDisplay)();
+
+// 空白页点击
+@property (nonatomic, copy) void(^emptyViewTapBlock)();
+
+// 按钮点击
+@property (nonatomic, copy) void(^emptyBtnClickBlock)();
+
+// life cricle
+@property (nonatomic, copy) void(^emptyViewWillAppear)();
+@property (nonatomic, copy) void(^emptyViewWillDisappear)();
 
 @end
 

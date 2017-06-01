@@ -9,36 +9,48 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-```objc
-// common initialization
-
-[FORScrollViewEmptyAssistant emptyWithContentView:self.tableview configerBlock:^(FOREmptyAssistantConfiger *configer) {
+```objective-c
+	// block config
+    typeof(self) weakSelf = self;
+    [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
         configer.emptyTitle = @"Hello World";
+        configer.emptyTitleFont = [UIFont boldSystemFontOfSize:22];
         configer.emptySubtitle = @"Talk is cheap. Show me the code";
         configer.emptyImage = [UIImage imageNamed:@"image_empty"];
-        configer.shouldDisplay = ^{
-            // return bool value 
+        configer.emptyBtnTitle = @"Request Net";
+        configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
+        configer.emptyBtnClickBlock = ^{
+            [weakSelf.tableview.mj_header beginRefreshing];
         };
-}];
-
-FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
-configer.emptyImage = [UIImage imageNamed:@"image_empty"];
-configer.emptyTitle = @"Hello World";
-[FORScrollViewEmptyAssistant emptyWithContentView:scrollView emptyConfiger:configer];
+    }];
 ```
 
-```objc
-// with button named request
-[FORScrollViewEmptyAssistant emptyWithContentView:scrollView
-                                    configerBlock:^(FOREmptyAssistantConfiger *configer) {
-                                        configer.emptyImage = [UIImage imageNamed:@""];
-                                        configer.emptyTitle = @"Net error,Please request again";
-                                        ...
-                                        }
-                                    emptyBtnTitle:@"Request"
-                              emptyBtnActionBlock:^{
-                                      //action code
-                                  }];
+```objective-c
+	// deliver object
+    typeof(self) weakSelf = self;
+    FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+    configer.emptyTitle = @"This is demo";
+    configer.emptySubtitle = @"tap this to request network";
+    configer.emptyViewTapBlock = ^{
+        [weakSelf.tableview.mj_header beginRefreshing];
+    };
+    [self.tableview emptyViewConfiger:configer];
+```
+
+```objective-c
+	// custom view as emptyView
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"hello world" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 0, 100, 100);
+    [btn addTarget:self action:@selector(viewDidAppear:) forControlEvents:UIControlEventTouchUpInside];
+    FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+    configer.customView = btn;
+    configer.shouldDisplay = ^BOOL{
+        return weakSelf.emptyDisplayCondition;
+    };
+    [self.tableview emptyViewConfiger:configer];
+
 ```
 
 ## Requirements
@@ -82,7 +94,6 @@ DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实�
 	- 显示时是否屏蔽滑动手势（allowScroll）
 	- 详细查看。。。
 - 支持自动布局及屏幕旋转
-- 不包含原库DZNEmptyDataSet的自定义空白页占位图（custom view），以后可以考虑如何接入在一功能
 
 ## Installation
 
