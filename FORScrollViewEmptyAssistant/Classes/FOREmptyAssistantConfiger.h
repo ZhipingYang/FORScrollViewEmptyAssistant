@@ -31,6 +31,7 @@
 
 
 // default @""
+// when length>0 , show the button in emptyView
 @property (nonatomic, copy)   NSString *emptyBtnTitle;
 // default systemFontOfSize:17.0f
 @property (nonatomic, strong)   UIFont *emptyBtntitleFont;

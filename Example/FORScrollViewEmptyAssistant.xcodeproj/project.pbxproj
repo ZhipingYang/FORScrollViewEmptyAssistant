@@ -21,6 +21,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		655307711EE00C4E00ADC3CF /* FORCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6553076F1EE00C4E00ADC3CF /* FORCustomCell.xib */; };
 		756F058B27A779CD0F46EC20 /* Pods_FORScrollViewEmptyAssistant_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3604D49AA5C2F3D2CBCE4A4 /* Pods_FORScrollViewEmptyAssistant_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		F014EBB11CED53E800FED264 /* launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = F014EBB01CED53E800FED264 /* launch.xib */; };
@@ -61,6 +62,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		62624AAD12340844B56E2BFF /* Pods-FORScrollViewEmptyAssistant_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FORScrollViewEmptyAssistant_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FORScrollViewEmptyAssistant_Example/Pods-FORScrollViewEmptyAssistant_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		6553076F1EE00C4E00ADC3CF /* FORCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FORCustomCell.xib; sourceTree = "<group>"; };
 		818B84504070ADF794A4FADC /* Pods-FORScrollViewEmptyAssistant_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FORScrollViewEmptyAssistant_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FORScrollViewEmptyAssistant_Example/Pods-FORScrollViewEmptyAssistant_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3604D49AA5C2F3D2CBCE4A4 /* Pods_FORScrollViewEmptyAssistant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FORScrollViewEmptyAssistant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* FORViewController.h */,
 				6003F5A6195388D20070C39A /* FORViewController.m */,
+				6553076F1EE00C4E00ADC3CF /* FORCustomCell.xib */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -286,6 +289,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				655307711EE00C4E00ADC3CF /* FORCustomCell.xib in Resources */,
 				F014EBB11CED53E800FED264 /* launch.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
