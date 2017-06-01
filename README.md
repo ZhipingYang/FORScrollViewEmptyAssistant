@@ -9,8 +9,10 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+**block config**
+
 ```objective-c
-	// block config
+
     typeof(self) weakSelf = self;
     [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
         configer.emptyTitle = @"Hello World";
@@ -25,8 +27,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
     }];
 ```
 
+**custom view as emptyView**
+
 ```objective-c
-	// deliver object
+
     typeof(self) weakSelf = self;
     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
     configer.emptyTitle = @"This is demo";
@@ -36,9 +40,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
     };
     [self.tableview emptyViewConfiger:configer];
 ```
+**custom view as emptyView**
 
 ```objective-c
-	// custom view as emptyView
+
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = [UIColor redColor];
     [btn setTitle:@"hello world" forState:UIControlStateNormal];
@@ -74,11 +79,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 真实项目中的空白页占位图图样案例：
 
-![Screenshots_Row1](https://raw.githubusercontent.com/dzenbot/UITableView-DataSet/master/Examples/Applications/Screenshots/Screenshots_row1.png)
-![Screenshots_Row2](https://raw.githubusercontent.com/dzenbot/UITableView-DataSet/master/Examples/Applications/Screenshots/Screenshots_row2.png)
-
 DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实现的一些图样：
-![Screenshot](https://github.com/ZhipingYang/FORScrollViewEmptyAssistant/raw/master/EmptyView.png)  
+![demo_show](https://cloud.githubusercontent.com/assets/9360037/26672974/cba10d2c-46ed-11e7-9b56-e04b6ca65b37.jpg)
+
 
 ### 特征
 - 大于等于 iOS6.0
