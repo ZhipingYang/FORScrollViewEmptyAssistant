@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     'FORScrollViewEmptyAssistant' => ['FORScrollViewEmptyAssistant/Assets/*.png']
   }
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   s.dependency 'DZNEmptyDataSet'
 end
