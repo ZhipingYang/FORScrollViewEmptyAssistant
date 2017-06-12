@@ -1,4 +1,5 @@
 use_frameworks!
+platform :ios, '6.0'
 
 target 'FORScrollViewEmptyAssistant_Example' do
   pod 'FORScrollViewEmptyAssistant', :path => '../'

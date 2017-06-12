@@ -12,13 +12,21 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 **block config**
 
 ```objective-c
-
+    // easy emptyview's layout
+    [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
+        configer.emptyTitle = @"Hello World";
+        configer.emptySubtitle = @"Talk is cheap. Show me the code";
+        configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+    }];
+    
+    // complicated 
     typeof(self) weakSelf = self;
     [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
         configer.emptyTitle = @"Hello World";
         configer.emptyTitleFont = [UIFont boldSystemFontOfSize:22];
         configer.emptySubtitle = @"Talk is cheap. Show me the code";
         configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+        configer.imageAnimation = imageAnimation;
         configer.emptyBtnTitle = @"Request Net";
         configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
         configer.emptyBtnClickBlock = ^{
@@ -41,8 +49,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```
 **custom view as emptyView**
 
-<img width="200" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672453/cfdd51ea-46eb-11e7-8746-1bacf58dfe8d.png"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672501/0263db48-46ec-11e7-9000-2400e71e1a3f.jpeg">
-
 ```objective-c
      UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"FORCustomCell" owner:nil options:nil] firstObject];
      FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
@@ -52,6 +58,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
      };
      [self.tableview emptyViewConfiger:configer];
 ```
+<img width="200" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672453/cfdd51ea-46eb-11e7-8746-1bacf58dfe8d.png"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672501/0263db48-46ec-11e7-9000-2400e71e1a3f.jpeg">
 
 ## Requirements
 **声明：**本库是基于[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)的基础上做的封装，目的就是：
@@ -83,15 +90,54 @@ DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实�
 - iPhone 和 iPad
 - 限于在TableView和CollectionView上使用
 - 对应元素一共有emptyImage、emptyTitle、emptySubtitle、emptyButton
+- 支持自动布局及屏幕旋转(Autolayout)
 - 可调整一些属性包括：
-	- 中心图片或按钮图片
-	- 上下间距（emptySpaceHeight）
-	- 字体颜色（emptyTitle/Subtitle/ButtonColor）
-	- 字体大小（emptyTitle/Subtitle/ButtonFont）
-	- 整体中心位移调整（emptyCenterOffset）
-	- 显示时是否屏蔽滑动手势（allowScroll）
-	- 详细查看。。。
-- 支持自动布局及屏幕旋转
+
+
+| 属性  | 类型 |  说明 |  默认值  |
+| -------- | --------| ------ |------ |
+|  |  |  |  |
+| **DataSource** |  |  |  |
+|  |  |  |  |
+| emptyTitle   | NSString |   标题 |  `@""`  |
+| emptyTitleFont   | UIFont |   标题字体 |  `systemFontOfSize:17.0f`  |
+| emptyTitleColor   | UIColor |   标题颜色 |  `darkGrayColor`  |
+|  |  |  |  |
+| emptySubtitle   | NSString |   副标题 |  `@""`  |
+| emptySubtitleFont   | UIFont |   副标题字体 |  `systemFontOfSize:15.0f`  |
+| emptySubtitleColor   | UIColor |   副标题颜色 |  `lightGrayColor`  |
+|  |  |  |  |
+| emptyImage   | UIImage |   空白页占位图 |  `nil`  |
+|  |  |  |  |
+| emptyBtnTitle   |  NSString |  按钮标题 |  `@""`  |
+| emptyBtntitleFont   | UIFont |   按钮字体 |  `systemFontOfSize:17.0f`  |
+| emptyBtnTitleColor   | UIColor |   按钮标题颜色 |  `whiteColor`  |
+| emptyBtnImage   |  UIImage |  按钮icon |  `nil`  |
+| emptyBtnBackgroundImage   | UIImage |   按钮背景图片 |  `blank_button`  |
+|  |  |  |  |
+| customView   | UIView |  自定义空白view（则前面设置的样式全部失效） |  `nil`  |
+| emptyCenterOffset   | CGPoint |   空白页整体位置默认是在tableView居中显示 |  `(x:0, y:-30)`  |
+| emptySpaceHeight   | CGFloat |   空白页的图片、按钮、文案之间的间距大小 | `20`  |
+|  |  |  |  |
+| **Delegate** | |||
+|  |  |  |  |
+| allowScroll   |  BOOL |  添加空白页后ScrollView是否可以继续拖拽 |  `YES`  |
+| userInteractionEnabled   | BOOL |   可交互 |  `YES`  |
+| shouldDisplay   |  BOOL(^)() |  添加空白页后ScrollView是否可以展示 |  `YES`  |
+|  |  |  |  |
+| shouldStartImageViewAnimate   | BOOL(^)() |   空白页的图片是否执行动画 |  `YES`  |
+| imageAnimation   |  CAAnimation |  图片的动画, Note: shouldStartAnimate==NO || imageAnimation==nil || emptyImage==nil 三者成立一个就不执行动画 |  `[CAAnimation new]`  |
+|  |  |  |  |
+| emptyViewTapBlock   |  void(^)() |  空白页区域点击 |  `/`  |
+| emptyBtnClickBlock   |  void(^)() |  按钮点击 |  `/`  |
+|  |  |  |  |
+| **Life Cirlce** |  |||
+|  |  |  |  |
+| emptyViewWillAppear   |  void(^)() |  life cricle |  `/`  |
+| emptyViewWillDisappear   | void(^)() |   life cricle |  `/`  |
+| emptyViewDidAppear   |  void(^)() |  life cricle |  `/`  |
+| emptyViewDidDisappear   |  void(^)() |  life cricle |  `/`  |
+
 
 ## Installation
 

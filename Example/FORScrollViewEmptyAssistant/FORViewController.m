@@ -33,6 +33,10 @@
         [self loadDataSuccess];
     }];
     
+    CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    anim.values = @[@0.8, @1, @1.2, @0.9, @1.1, @1];
+    anim.duration = 0.6;
+    
     // method one 配置方法1
     typeof(self) weakSelf = self;
     [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
@@ -43,6 +47,7 @@
         configer.emptySpaceHeight = 20;
         configer.emptyBtnTitle = @"Request Net";
         configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
+        configer.imageAnimation = anim;
         configer.emptyBtnClickBlock = ^{
             [weakSelf.tableview.mj_header beginRefreshing];
         };

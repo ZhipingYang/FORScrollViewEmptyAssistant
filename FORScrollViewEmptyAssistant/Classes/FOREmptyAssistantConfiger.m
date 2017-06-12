@@ -56,9 +56,9 @@
     return _emptySubtitleColor ?: [UIColor lightGrayColor];
 }
 
-- (UIColor *)emptyBtntitleColor
+- (UIColor *)emptyBtnTitleColor
 {
-    return _emptyBtntitleColor ?: [UIColor whiteColor];
+    return _emptyBtnTitleColor ?: [UIColor whiteColor];
 }
 
 - (NSString *)emptyBtnTitle
@@ -68,7 +68,12 @@
 
 - (UIImage *)emptyBtnImage
 {
-    return _emptyBtnImage ?: [UIImage imageNamed:@"blank_button"];
+    return _emptyBtnImage ?: [UIImage imageNamed:@""];
+}
+
+- (UIImage *)emptyBtnBackgroundImage
+{
+    return _emptyBtnBackgroundImage ?: [UIImage imageNamed:@"blank_button"];
 }
 
 #pragma mark - DZNEmptyDataSetSource
@@ -103,14 +108,19 @@
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
 {
     NSDictionary *attributes = @{NSFontAttributeName: self.emptyBtntitleFont,
-                                 NSForegroundColorAttributeName: self.emptyBtntitleColor};
+                                 NSForegroundColorAttributeName: self.emptyBtnTitleColor};
     
     return [[NSAttributedString alloc] initWithString:self.emptyBtnTitle attributes:attributes];
 }
 
-- (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
 {
     return self.emptyBtnImage;
+}
+
+- (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    return self.emptyBtnBackgroundImage;
 }
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
@@ -150,6 +160,16 @@
     return self.shouldDisplay ? self.shouldDisplay() : YES;
 }
 
+- (BOOL)emptyDataSetShouldAnimateImageView:(UIScrollView *)scrollView
+{
+    return self.shouldStartImageViewAnimate ? self.shouldStartImageViewAnimate() : YES;
+}
+
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return self.imageAnimation ?: [CAAnimation animation];
+}
+
 - (void)emptyDataSetDidTapView:(UIScrollView *)scrollView
 {
     !self.emptyViewTapBlock ?: self.emptyViewTapBlock();
@@ -159,6 +179,8 @@
 {
     !self.emptyBtnClickBlock ?: self.emptyBtnClickBlock();
 }
+
+#pragma mark - life circle
 
 - (void)emptyDataSetWillAppear:(UIScrollView *)scrollView
 {
@@ -170,5 +192,14 @@
     !self.emptyViewWillDisappear ?: self.emptyViewWillDisappear();
 }
 
+- (void)emptyDataSetDidDisappear:(UIScrollView *)scrollView
+{
+    !self.emptyViewDidDisappear ?: self.emptyViewDidDisappear();
+}
+
+- (void)emptyDataSetDidAppear:(UIScrollView *)scrollView
+{
+    !self.emptyViewDidAppear ?: self.emptyViewDidAppear();
+}
 @end
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FORScrollViewEmptyAssistant"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "Table/Collection的空白页"
 
 # This description is used to generate tags and improve search results.
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     'FORScrollViewEmptyAssistant' => ['FORScrollViewEmptyAssistant/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  s.dependency 'DZNEmptyDataSet', '~> 1.5.2'
+  s.dependency 'DZNEmptyDataSet'
 end

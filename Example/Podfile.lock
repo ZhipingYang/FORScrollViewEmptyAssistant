@@ -1,13 +1,13 @@
 PODS:
-  - DZNEmptyDataSet (1.5.2)
-  - FBSnapshotTestCase (2.1.0):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.0)
-  - FBSnapshotTestCase/Core (2.1.0)
-  - FBSnapshotTestCase/SwiftSupport (2.1.0):
+  - DZNEmptyDataSet (1.8.1)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - FORGestureTrackDisplay (0.1.0)
-  - FORScrollViewEmptyAssistant (0.1.2):
-    - DZNEmptyDataSet (~> 1.5.2)
+  - FORScrollViewEmptyAssistant (1.0.0):
+    - DZNEmptyDataSet
   - Kiwi (2.4.0)
   - MJRefresh (3.0.8)
 
@@ -23,13 +23,13 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DZNEmptyDataSet: 741da409081a4bf707c949c964623a6ad1799772
-  FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   FORGestureTrackDisplay: a0c14d65cbe49ee54dbc1ca15cfd14d905e0cf79
-  FORScrollViewEmptyAssistant: 8434fcb61e4dc1c19bb4670ec99d48a3d5fea4d7
+  FORScrollViewEmptyAssistant: 37ec00e959a1ff44fce8f827aaa1fcbb5722f284
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
 
-PODFILE CHECKSUM: 502713c083caedc29cbdccd3a09ca17fb304d6df
+PODFILE CHECKSUM: 294d902f35f53f1c8948c5aecb4ee9731cfd9f11
 
 COCOAPODS: 1.2.1
