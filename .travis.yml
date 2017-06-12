@@ -3,10 +3,12 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+xcode_project: Example/FORScrollViewEmptyAssistant.xcworkspace
+xcode_scheme: FORScrollViewEmptyAssistant_Example
+cache: cocoapods
+podfile: Example/Podfile
+before_install:
+- gem install cocoapods # Since Travis is not always on latest version
+- pod install --project-directory=Example
 script:
 xcodebuild -workspace Example/FORScrollViewEmptyAssistant.xcworkspace -scheme FORScrollViewEmptyAssistant_Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
