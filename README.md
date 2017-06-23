@@ -11,57 +11,52 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 **block config**
 
-```objective-c
-    // easy emptyview's layout
-    [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
-        configer.emptyTitle = @"Hello World";
-        configer.emptySubtitle = @"Talk is cheap. Show me the code";
-        configer.emptyImage = [UIImage imageNamed:@"image_empty"];
-    }];
-    
-    // complicated 
-    typeof(self) weakSelf = self;
-    
-    [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
-        configer.emptyTitle = @"Hello World";
-        configer.emptySubtitle = @"Talk is cheap. Show me the code";
-        configer.emptyImage = [UIImage imageNamed:@"image_empty"];
-        configer.imageAnimation = imageAnimation;
-        configer.emptyBtnTitle = @"Request Net";
-        configer.emptyBtnClickBlock = ^{
-            [weakSelf.tableview.mj_header beginRefreshing];
-        };
-    }];
-    
-```
+```objc
+// easy emptyview's layout
+[self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
+    configer.emptyTitle = @"Hello World";
+    configer.emptySubtitle = @"Talk is cheap. Show me the code";
+    configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+}];
 
-**custom view as emptyView**
+// complicated 
+typeof(self) weakSelf = self;
 
-```objective-c
-
-    typeof(self) weakSelf = self;
-    
-    FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
-    configer.emptyTitle = @"This is demo";
-    configer.emptySubtitle = @"tap this to request network \n hurry up";
-    configer.emptyViewTapBlock = ^{
+[self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
+    configer.emptyTitle = @"Hello World";
+    configer.emptySubtitle = @"Talk is cheap. Show me the code";
+    configer.emptyImage = [UIImage imageNamed:@"image_empty"];
+    configer.imageAnimation = imageAnimation;
+    configer.emptyBtnTitle = @"Request Net";
+    configer.emptyBtnClickBlock = ^{
         [weakSelf.tableview.mj_header beginRefreshing];
     };
-    
-    [self.tableview emptyViewConfiger:configer];
-    
+}];
+```
+
+**custom view as emptyView**
+
+```objc
+typeof(self) weakSelf = self;
+
+FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+configer.emptyTitle = @"This is demo";
+configer.emptySubtitle = @"tap this to request network \n hurry up";
+configer.emptyViewTapBlock = ^{
+    [weakSelf.tableview.mj_header beginRefreshing];
+};
+
+[self.tableview emptyViewConfiger:configer];
 ```
 **custom view as emptyView**
 
-```objective-c
+```objc
+ UIView *customView = [[[NSBundle mainBundle] loadNibNamed:@"FORCustomCell" owner:nil options:nil] firstObject];
 
-     UIView *customView = [[[NSBundle mainBundle] loadNibNamed:@"FORCustomCell" owner:nil options:nil] firstObject];
-     
-     FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
-     configer.customView = customView;
-     
-     [self.tableview emptyViewConfiger:configer];
-     
+ FOREmptyAssistantConfiger *configer = [FOREmptyAssistantConfiger new];
+ configer.customView = customView;
+
+ [self.tableview emptyViewConfiger:configer];
 ```
 <img width="200" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672453/cfdd51ea-46eb-11e7-8746-1bacf58dfe8d.png"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672501/0263db48-46ec-11e7-9000-2400e71e1a3f.jpeg">
 
@@ -91,7 +86,7 @@ DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实�
 <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672500/0260edac-46ec-11e7-9026-d22a5dcdd1fd.jpeg"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672502/0268a2cc-46ec-11e7-9594-4d81a1626748.jpeg"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672503/02751372-46ec-11e7-9916-4ed6d69052dc.jpeg">
 
 ### 特征
-- >= iOS6.0
+- \>= iOS6.0
 - iPhone 和 iPad
 - 限于在TableView和CollectionView上使用
 - 对应元素一共有emptyImage、emptyTitle、emptySubtitle、emptyButton
@@ -150,7 +145,7 @@ FORScrollViewEmptyAssistant is available through [CocoaPods](http://cocoapods.or
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "FORScrollViewEmptyAssistant"
+pod 'FORScrollViewEmptyAssistant'
 ```
 
 ## Author
