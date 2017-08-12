@@ -48,8 +48,8 @@
 // 自定义通用的空白view
 @property (nonatomic, strong)   UIView *customView;
 
-// 空白页整体位置默认是在tableView居中显示: default (x:0, y:-30)
-@property (nonatomic)   CGPoint emptyCenterOffset;
+// 空白页整体位置默认是在tableView居中显示: default 0
+@property (nonatomic)   CGFloat emptyCenterOffset;
 
 // 空白页的图片、按钮、文案之间的间距大小: default 20
 @property (nonatomic)   CGFloat emptySpaceHeight;
