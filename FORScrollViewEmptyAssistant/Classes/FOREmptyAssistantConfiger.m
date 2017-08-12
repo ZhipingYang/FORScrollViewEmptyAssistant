@@ -13,7 +13,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.emptyCenterOffset = CGPointMake(0, -30);
+        self.emptyCenterOffset = 0;
         self.emptySpaceHeight = 20;
         self.allowScroll = YES;
         self.userInteractionEnabled = YES;
@@ -133,7 +133,7 @@
     return self.customView;
 }
 
-- (CGPoint)offsetForEmptyDataSet:(UIScrollView *)scrollView
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView
 {
     return self.emptyCenterOffset;
 }
