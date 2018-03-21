@@ -55,7 +55,7 @@
         configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
         configer.emptyVerticalOffset = -50;
         configer.emptyBtnClickBlock = ^{
-            [weakSelf.tableview.mj_header beginRefreshing];
+            [[[UIAlertView alloc] initWithTitle:@"emptyBtnClick" message:@"add some event when empty view tapped" delegate:nil cancelButtonTitle:@"Sure" otherButtonTitles:nil] show];
         };
         configer.shouldDisplay = ^{
             return weakSelf.emptyDisplayCondition;

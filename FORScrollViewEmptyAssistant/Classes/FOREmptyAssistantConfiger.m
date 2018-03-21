@@ -83,7 +83,7 @@
     NSDictionary *attributes = @{NSFontAttributeName: self.emptyTitleFont,
                                  NSForegroundColorAttributeName: self.emptyTitleColor};
     
-    return [[NSAttributedString alloc] initWithString:self.emptyTitle
+    return [[NSAttributedString alloc] initWithString:self.emptyTitle ?: @""
                                            attributes:attributes];
 }
 
@@ -97,7 +97,7 @@
                                  NSForegroundColorAttributeName: self.emptySubtitleColor,
                                  NSParagraphStyleAttributeName: paragraph};
     
-    return [[NSAttributedString alloc] initWithString:self.emptySubtitle attributes:attributes];
+    return [[NSAttributedString alloc] initWithString:self.emptySubtitle ?: @"" attributes:attributes];
 }
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
@@ -110,7 +110,7 @@
     NSDictionary *attributes = @{NSFontAttributeName: self.emptyBtntitleFont,
                                  NSForegroundColorAttributeName: self.emptyBtnTitleColor};
     
-    return [[NSAttributedString alloc] initWithString:self.emptyBtnTitle attributes:attributes];
+    return [[NSAttributedString alloc] initWithString:self.emptyBtnTitle ?: @"" attributes:attributes];
 }
 
 - (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
