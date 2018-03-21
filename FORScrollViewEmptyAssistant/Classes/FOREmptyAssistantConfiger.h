@@ -79,7 +79,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  空白页整体位置默认是在tableView居中显示: default 0
  */
-@property (nonatomic) CGFloat emptyCenterOffset;
+@property (nonatomic) CGFloat emptyVerticalOffset;
+@property (nonatomic) CGPoint emptyCenterOffset DEPRECATED_MSG_ATTRIBUTE("使用替换属性：emptyVerticalOffset");
 
 /**
  空白页的图片、按钮、文案之间的间距大小: default 20
@@ -101,22 +102,22 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  添加空白页后ScrollView是否可以展示: default YES
  */
-@property (nonatomic, copy) BOOL(^shouldDisplay)();
+@property (nonatomic, copy, nullable) BOOL(^shouldDisplay)(void);
 
 /**
  空白页区域点击
  */
-@property (nonatomic, copy) void(^emptyViewTapBlock)();
+@property (nonatomic, copy, nullable) void(^emptyViewTapBlock)(void);
 
 /**
  按钮点击
  */
-@property (nonatomic, copy) void(^emptyBtnClickBlock)();
+@property (nonatomic, copy, nullable) void(^emptyBtnClickBlock)(void);
 
 /**
  空白页的图片是否执行动画: default YES
  */
-@property (nonatomic, copy) BOOL(^shouldStartImageViewAnimate)();
+@property (nonatomic, copy, nullable) BOOL(^shouldStartImageViewAnimate)(void);
 
 /**
  图片的动画,
@@ -125,11 +126,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) CAAnimation *imageAnimation;
 
 // life cricle
-@property (nonatomic, copy) void(^emptyViewWillAppear)();
-@property (nonatomic, copy) void(^emptyViewWillDisappear)();
-@property (nonatomic, copy) void(^emptyViewDidAppear)();
-@property (nonatomic, copy) void(^emptyViewDidDisappear)();
+@property (nonatomic, copy, nullable) void(^emptyViewWillAppear)(void);
+@property (nonatomic, copy, nullable) void(^emptyViewWillDisappear)(void);
+@property (nonatomic, copy, nullable) void(^emptyViewDidAppear)(void);
+@property (nonatomic, copy, nullable) void(^emptyViewDidDisappear)(void);
 
 @end
 
 NS_ASSUME_NONNULL_END
+

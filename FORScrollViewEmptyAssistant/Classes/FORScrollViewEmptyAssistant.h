@@ -8,19 +8,22 @@
 #import <UIKit/UIKit.h>
 #import "FOREmptyAssistantConfiger.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UITableView (EmptyAsistant)
 
-- (void)emptyViewConfigerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock;
+- (void)emptyViewConfigerBlock:(nullable void (^)(FOREmptyAssistantConfiger *configer))configerBlock;
 
-- (void)emptyViewConfiger:(FOREmptyAssistantConfiger *)configer;
+- (void)emptyViewConfiger:(nullable FOREmptyAssistantConfiger *)configer;
 
 @end
 
 @interface UICollectionView (EmptyAsistant)
 
-- (void)emptyViewConfigerBlock:(void (^)(FOREmptyAssistantConfiger *configer))configerBlock;
+- (void)emptyViewConfigerBlock:(nullable void (^)(FOREmptyAssistantConfiger *configer))configerBlock;
 
-- (void)emptyViewConfiger:(FOREmptyAssistantConfiger *)configer;
+- (void)emptyViewConfiger:(nullable FOREmptyAssistantConfiger *)configer;
 
 @end
 
+NS_ASSUME_NONNULL_END

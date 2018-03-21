@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/FORScrollViewEmptyAssistant.svg?style=flat)](http://cocoapods.org/pods/FORScrollViewEmptyAssistant)
 [![Platform](https://img.shields.io/cocoapods/p/FORScrollViewEmptyAssistant.svg?style=flat)](http://cocoapods.org/pods/FORScrollViewEmptyAssistant)
 
+### ScreenShot
+
+<img width=32% src="https://cloud.githubusercontent.com/assets/9360037/26672500/0260edac-46ec-11e7-9026-d22a5dcdd1fd.jpeg"> <img width=32% src="https://cloud.githubusercontent.com/assets/9360037/26672502/0268a2cc-46ec-11e7-9594-4d81a1626748.jpeg"> <img width=32% src="https://cloud.githubusercontent.com/assets/9360037/26672503/02751372-46ec-11e7-9916-4ed6d69052dc.jpeg">
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -58,7 +62,7 @@ configer.emptyViewTapBlock = ^{
 
  [self.tableview emptyViewConfiger:configer];
 ```
-<img width="200" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672453/cfdd51ea-46eb-11e7-8746-1bacf58dfe8d.png"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672501/0263db48-46ec-11e7-9000-2400e71e1a3f.jpeg">
+<img width=55% src="https://cloud.githubusercontent.com/assets/9360037/26672453/cfdd51ea-46eb-11e7-8746-1bacf58dfe8d.png"> <img width=40% src="https://cloud.githubusercontent.com/assets/9360037/26672501/0263db48-46ec-11e7-9000-2400e71e1a3f.jpeg">
 
 ## Requirements
 **声明：**本库是基于[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)的基础上做的封装，目的就是：
@@ -78,12 +82,6 @@ configer.emptyViewTapBlock = ^{
 - 避免强类型提示的突兀出现（UIAlerView、HUDProgress等等）
 - 更快引导用户入门
 - 使用logo加深品牌的影响
-
-真实项目中的空白页占位图图样案例：
-
-DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实现的一些图样：
-
-<img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672500/0260edac-46ec-11e7-9026-d22a5dcdd1fd.jpeg"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672502/0268a2cc-46ec-11e7-9594-4d81a1626748.jpeg"> <img width="250" alt="wx20170601-170002 2x" src="https://cloud.githubusercontent.com/assets/9360037/26672503/02751372-46ec-11e7-9916-4ed6d69052dc.jpeg">
 
 ### 特征
 - \>= iOS6.0
@@ -116,7 +114,7 @@ DZNEmptyDataSet及本库都可以实现如上的效果，这里例举本库实�
 | emptyBtnBackgroundImage   | UIImage |   按钮背景图片 |  `blank_button`  |
 |  |  |  |  |
 | customView   | UIView |  自定义空白view（则前面设置的样式全部失效） |  `nil`  |
-| emptyCenterOffset   | CGPoint |   空白页整体位置默认是在tableView居中显示 |  `(x:0, y:-30)`  |
+| emptyVerticalOffset   | CGFloat |   空白页整体位置默认是在tableView居中显示 |  `0`  |
 | emptySpaceHeight   | CGFloat |   空白页的图片、按钮、文案之间的间距大小 | `20`  |
 |  |  |  |  |
 | **Delegate** | |||

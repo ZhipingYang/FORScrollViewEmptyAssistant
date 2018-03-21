@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FORScrollViewEmptyAssistant"
-  s.version          = "1.2.0"
+  s.version          = "1.2.1"
   s.summary          = "Table/Collection的空白页"
 
 # This description is used to generate tags and improve search results.

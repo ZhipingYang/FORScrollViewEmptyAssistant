@@ -53,7 +53,7 @@
         configer.emptySpaceHeight = 20;
         configer.emptyBtnTitle = @"Request Net";
         configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
-        configer.emptyCenterOffset = -50;
+        configer.emptyVerticalOffset = -50;
         configer.emptyBtnClickBlock = ^{
             [weakSelf.tableview.mj_header beginRefreshing];
         };
