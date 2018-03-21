@@ -23,12 +23,12 @@
 
 - (NSString *)emptyTitle
 {
-    return _emptyTitle ?: @"";
+    return _emptyTitle;
 }
 
 - (NSString *)emptySubtitle
 {
-    return _emptySubtitle ?: @"";
+    return _emptySubtitle;
 }
 
 - (UIFont *)emptyTitleFont
@@ -63,17 +63,17 @@
 
 - (NSString *)emptyBtnTitle
 {
-    return _emptyBtnTitle ?: @"";
+    return _emptyBtnTitle;
 }
 
 - (UIImage *)emptyBtnImage
 {
-    return _emptyBtnImage ?: [UIImage imageNamed:@""];
+    return _emptyBtnImage;
 }
 
 - (UIImage *)emptyBtnBackgroundImage
 {
-    return _emptyBtnBackgroundImage ?: [UIImage imageNamed:@"blank_button"];
+    return _emptyBtnBackgroundImage;
 }
 
 #pragma mark - DZNEmptyDataSetSource

@@ -49,7 +49,7 @@ static char const * const kFOREmptyAssistant = "kFOREmptyAssistant";
 
 - (void)emptyViewConfiger:(FOREmptyAssistantConfiger *)configer
 {
-    self.configer = configer;
+    self.configer = configer ?: [FOREmptyAssistantConfiger new];
     self.emptyDataSetSource = self.configer;
     self.emptyDataSetDelegate = self.configer;
 }
@@ -69,7 +69,7 @@ static char const * const kFOREmptyAssistant = "kFOREmptyAssistant";
 
 - (void)emptyViewConfiger:(FOREmptyAssistantConfiger *)configer
 {
-    self.configer = configer;
+    self.configer = configer ?: [FOREmptyAssistantConfiger new];
     self.emptyDataSetSource = self.configer;
     self.emptyDataSetDelegate = self.configer;
 }

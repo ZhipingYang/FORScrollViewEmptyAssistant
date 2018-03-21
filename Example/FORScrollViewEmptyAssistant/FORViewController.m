@@ -33,13 +33,19 @@
         [self loadDataSuccess];
     }];
     
-    CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    anim.values = @[@0.8, @1, @1.2, @0.9, @1.1, @1];
-    anim.duration = 0.6;
-    
     // method one 配置方法1
     typeof(self) weakSelf = self;
     [self.tableview emptyViewConfigerBlock:^(FOREmptyAssistantConfiger *configer) {
+        
+        UIImage *image = [UIImage imageNamed:@"blank_button"];
+        image = [image stretchableImageWithLeftCapWidth:image.size.width/2.0 topCapHeight:image.size.height/2.0];
+        configer.emptyBtnBackgroundImage = image;
+        
+        CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        anim.values = @[@0.8, @1, @1.2, @0.9, @1.1, @1];
+        anim.duration = 0.6;
+        configer.imageAnimation = anim;
+        
         configer.emptyTitle = @"Hello World";
         configer.emptyTitleFont = [UIFont boldSystemFontOfSize:22];
         configer.emptySubtitle = @"Talk is cheap. Show me the code";
@@ -47,7 +53,7 @@
         configer.emptySpaceHeight = 20;
         configer.emptyBtnTitle = @"Request Net";
         configer.emptyBtntitleFont = [UIFont boldSystemFontOfSize:19];
-        configer.imageAnimation = anim;
+        configer.emptyCenterOffset = -50;
         configer.emptyBtnClickBlock = ^{
             [weakSelf.tableview.mj_header beginRefreshing];
         };
